@@ -1,0 +1,5 @@
+package com.projectJPA.demo.resources;
+
+public class UserResource {
+
+}
