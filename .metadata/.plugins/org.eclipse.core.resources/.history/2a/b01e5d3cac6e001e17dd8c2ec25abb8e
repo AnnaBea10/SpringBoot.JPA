@@ -1,0 +1,5 @@
+package com.projectJPA.demo.config;
+
+public class TestConfig {
+
+}
