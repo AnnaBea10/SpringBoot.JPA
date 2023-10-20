@@ -13,14 +13,14 @@ import com.projectJPA.demo.repositories.CategoryRepository;
 public class CategoryService {
 	
 	@Autowired
-	private CategoryRepository repository;
+	private CategoryRepository category;
 	
 	public List<Category> findAll(){
-		return repository.findAll();
+		return category.findAll();
 	}
 	
 	public Category findById(Long id) {
-		Optional<Category> obj = repository.findById(id);
+		Optional<Category> obj = category.findById(id);
 		return obj.get();
 	}
 }
