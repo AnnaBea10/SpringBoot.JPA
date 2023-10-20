@@ -1,0 +1,19 @@
+package com.projectJPA.demo.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.projectJPA.demo.entities.User;
+import com.projectJPA.demo.repositories.UserRepository;
+
+public class UserService {
+	
+	@Autowired
+	private UserRepository repository;
+	
+	public List<User> findAll(){
+		return repository.findAll();
+	}
+
+}
