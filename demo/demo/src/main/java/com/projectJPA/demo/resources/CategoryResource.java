@@ -13,7 +13,7 @@ import com.projectJPA.demo.entities.Category;
 import com.projectJPA.demo.services.CategoryService;
 
 @RestController
-@RequestMapping(value = "/categorys")
+@RequestMapping(value = "/categories")
 public class CategoryResource {
 	
 	@Autowired

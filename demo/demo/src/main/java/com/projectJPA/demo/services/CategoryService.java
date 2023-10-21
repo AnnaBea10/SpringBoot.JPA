@@ -15,10 +15,12 @@ public class CategoryService {
 	@Autowired
 	private CategoryRepository category;
 	
+	//Buscar todos as categorias
 	public List<Category> findAll(){
 		return category.findAll();
 	}
 	
+	//Buscar categorias por ID
 	public Category findById(Long id) {
 		Optional<Category> obj = category.findById(id);
 		return obj.get();

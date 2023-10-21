@@ -15,10 +15,12 @@ public class OrderService {
 	@Autowired
 	private OrderRepository repository;
 	
+	//Buscar todos os pedidos
 	public List<Order> findAll(){
 		return repository.findAll();
 	}
 	
+	//Buscar pedidos por ID
 	public Order findById(Long id) {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();

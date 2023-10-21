@@ -15,10 +15,12 @@ public class UserService {
 	@Autowired
 	private UserRepository repository;
 	
+	//Buscar todos os users
 	public List<User> findAll(){
 		return repository.findAll();
 	}
 	
+	//Buscar users por  ID
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
