@@ -2,7 +2,9 @@ package com.projectJPA.demo.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.projectJPA.demo.entities.enums.OrderStatus;
@@ -13,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,10 +24,10 @@ public class Order implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z", timezone = "GMT")
 	private Instant moment;
 	
@@ -33,6 +36,9 @@ public class Order implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
+	
+	@OneToMany(mappedBy = "id.order")
+	private Set<OrderItem> items = new HashSet<>();
 
 	//Constructors
 	public Order() {
@@ -70,6 +76,10 @@ public class Order implements Serializable {
 		this.client = client;
 	}
 	
+	public Set<OrderItem> getItems(){
+		return items;
+	}
+	
 	public OrderStatus getOrderStatus() {
 		return OrderStatus.valueOf(orderStatus);
 	}
@@ -80,7 +90,6 @@ public class Order implements Serializable {
 		}
 	}
 
-	//HashCode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -96,6 +105,5 @@ public class Order implements Serializable {
 			return false;
 		Order other = (Order) obj;
 		return Objects.equals(id, other.id);
-	}
-	
+	}	
 }
