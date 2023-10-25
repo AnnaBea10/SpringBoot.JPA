@@ -13,7 +13,7 @@ import com.projectJPA.demo.entities.Order;
 import com.projectJPA.demo.services.OrderService;
 
 @RestController
-@RequestMapping(value ="/orders")
+@RequestMapping(value = "/orders")
 public class OrderResource {
 	
 	@Autowired

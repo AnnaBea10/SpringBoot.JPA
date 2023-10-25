@@ -1,0 +1,5 @@
+spring.profiles.active=test
+spring.jpa.open-in-view=true
+spring.jackson.serialization.write_enums_using_to_string=true
+logging.level.root=DEBUG
+

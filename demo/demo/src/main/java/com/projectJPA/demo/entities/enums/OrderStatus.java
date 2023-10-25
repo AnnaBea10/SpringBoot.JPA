@@ -10,14 +10,17 @@ public enum OrderStatus {
 
 	private int code;
 	
+	//Constructor
 	private OrderStatus(int code) {
 		this.code = code;
 	}
 	
+	//Método get
 	public int getCode() {
 		return code;
 	}
 	
+	//Captar o código e transformar nos valores
 	public static OrderStatus valueOf(int code) {
 		for (OrderStatus value : OrderStatus.values()) {
 			if (value.getCode() == code) {
