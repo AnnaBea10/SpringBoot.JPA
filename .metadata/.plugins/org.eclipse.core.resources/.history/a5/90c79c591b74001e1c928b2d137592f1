@@ -1,0 +1,7 @@
+package com.projectJPA.demo.entities;
+
+public class Payment {
+	
+	private Long id;
+	private Instant moment;
+}

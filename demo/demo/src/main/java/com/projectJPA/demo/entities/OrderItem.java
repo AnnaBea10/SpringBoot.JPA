@@ -1,6 +1,5 @@
 package com.projectJPA.demo.entities;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,21 +10,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_order_item")
-public class OrderItem implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
+@Table (name = "tb_order_item")
+public class OrderItem {
 	
 	@EmbeddedId
 	private OrderItemPK id = new OrderItemPK();
-			
+
 	private Integer quantity;
 	private Double price;
 	
-	//Constructors
 	public OrderItem() {
 	}
-	
+
 	public OrderItem(Order order, Product product, Integer quantity, Double price) {
 		super();
 		id.setOrder(order);
@@ -34,8 +30,7 @@ public class OrderItem implements Serializable{
 		this.price = price;
 	}
 
-	
-    //Getters and Setters
+	//Getters and Setters
 	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
@@ -44,7 +39,7 @@ public class OrderItem implements Serializable{
 	public void setOrder(Order order) {
 		id.setOrder(order);
 	}
-
+	
 	public Product getProduct() {
 		return id.getProduct();
 	}
@@ -53,14 +48,6 @@ public class OrderItem implements Serializable{
 		id.setProduct(product);
 	}
 	
-	public OrderItemPK getId() {
-		return id;
-	}
-
-	public void setId(OrderItemPK id) {
-		this.id = id;
-	}
-
 	public Integer getQuantity() {
 		return quantity;
 	}
@@ -76,13 +63,17 @@ public class OrderItem implements Serializable{
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	//FunctionsubTotal
+	public Double getSubTotal() {
+		return price * quantity;
+	}
 
-	//HashCode and equals
+	//HashCode and Equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

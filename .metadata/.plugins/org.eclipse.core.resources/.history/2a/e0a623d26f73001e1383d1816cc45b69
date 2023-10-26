@@ -1,0 +1,5 @@
+package com.projectJPA.demo.entities.serialization;
+
+public class OrderSerializer {
+
+}
