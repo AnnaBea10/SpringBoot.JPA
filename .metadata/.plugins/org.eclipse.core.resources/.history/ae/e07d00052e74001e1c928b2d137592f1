@@ -1,0 +1,13 @@
+package com.projectJPA.demo.resources.exceptions;
+
+import java.time.Instant;
+
+public class StandardError extends RuntimeException {
+	private static final long serialVersionUID = 1L;
+
+	private Instant timestmap;
+	private Integer status;
+	private String error;
+	private String message;
+	private String path;
+}
