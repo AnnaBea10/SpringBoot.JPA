@@ -23,7 +23,7 @@ Projeto de um curso de Java, https://www.udemy.com/user/nelio-alves, desenvolvid
 
 Após baixar ou clonar o projeto:
 
-Os dados podem ser acessos pelo H2DataBase pela configuração padrão do banco, e as requisições pelo Postman com os métodos GET, POST, DELETE, PUT. 
+Os dados podem ser acessos pelo H2DataBase pela configuração padrão do banco, podem ser encontradas na "application.properties", e as requisições pelo Postman com os métodos GET, POST, DELETE, PUT. 
 
 # ✔️ Tecnologias utilizadas
 
