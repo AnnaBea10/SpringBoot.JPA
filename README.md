@@ -7,8 +7,6 @@
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 
 # 📝 Descrição do Projeto 
-  
-Projeto de um curso de Java, https://www.udemy.com/user/nelio-alves, desenvolvido para estudos. 
 
 É uma Web Service que permite monitorar os pedidos dos clientes, com as informações dos pedidos, usuários, data do pagamento, e outros dados. 
 
